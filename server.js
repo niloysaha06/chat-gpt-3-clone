@@ -6,7 +6,8 @@ const colous = require("colors")
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 //routes path
-const authRoutes = require('./routes/authRoutes')
+const authRoutes = require('./routes/authRoutes');
+const errorHandle = require("./middlewares/errormiddleware");
 
 //dotenv
 dotenv.config()
@@ -23,6 +24,7 @@ app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(morgan("dev"))
+app.use(errorHandle)
 
 const PORT = process.env.PORT || 8080
 
