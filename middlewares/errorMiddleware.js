@@ -11,7 +11,7 @@ const errorHandle = (err, req, res, next) => {
         const message = 'Resources Not Found'
         error = new errorResponse(message, 404)
     }
-    //dup;icate key error
+    //duplicate key error
     if(err.code = 11000){
         const message = "Duplicate field value enterd"
         error = new errorResponse(message, 400)
