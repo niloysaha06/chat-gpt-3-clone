@@ -2,8 +2,8 @@ const errorResponse = require("../utils/errorResponse")
 
 
 const errorHandle = (err, req, res, next) => {
-    let err = {...err}
-    err.message = err.message
+    let error = {...err}
+    error.message = err.message
 
 
     //mongoose cast Error

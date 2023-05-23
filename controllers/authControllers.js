@@ -52,7 +52,10 @@ exports.loginController = async (req, res, next) => {
     }
 }
 
-exports.logoutController = async () => {
-
-
+exports.logoutController = async (req, res) => {
+    res.clearCookie("refreshToken")
+    return res.status(200).json({
+      success: true,
+      message: "Logout Successfully"
+    })
 }
