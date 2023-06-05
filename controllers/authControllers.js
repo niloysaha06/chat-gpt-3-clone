@@ -23,7 +23,6 @@ exports.registerContoller = async (req, res, next) => {
       return next(new errorResponse("Email is already register", 500));
     }
     const user = await userModel.create({ username, email, password });
-    console.log("user model: " + JSON.stringify(user));
 
     this.sendToken(user, 201, res);
   } catch (error) {
@@ -43,9 +42,9 @@ exports.loginController = async (req, res, next) => {
     if (!user) {
       return next(new errorResponse("Invalide Creditial", 401));
     }
-    const isMatch = await userModel.matchPassword(password);
+    const isMatch = await user.matchPassword(password);
     if (!isMatch) {
-      return next(new errorHandle("Invalide Creditial", 401));
+      return next(new errorResponse("Invalide Creditial", 401));
     }
     //res
     this.sendToken(user, 200, res);

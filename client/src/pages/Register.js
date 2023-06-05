@@ -19,33 +19,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   console.log(username, email, password);
-  // const [user, setUser] = useState({
-  //   username: "",
-  //   email: "",
-  //   password: "",
-  // });
-
-  // const handleName = (e) => {
-  //   setUser({
-  //     ...user,
-  //     username: e.target.value,
-  //   });
-  // };
-  // const handleEmail = (e) => {
-  //   setUser({
-  //     ...user,
-  //     email: e.target.value,
-  //   });
-  // };
-
-  // const handlePassword = (e) => {
-  //   setUser({
-  //     ...user,
-  //     password: e.target.value,
-  //   });
-  // };
-
-  // console.log(user);
 
   //mediaquery
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
@@ -140,18 +113,3 @@ const Register = () => {
 };
 
 export default Register;
-
-{
-  /* <Box width={isNotMobile ? '40%' : '80%'} p={'2rem'} m={'2rem auto'} borderRadius={5} sx={{boxShadow: 5}}>
-<Collapse in={error}><Alert severity='error' sx={{mb:2}}>{error}</Alert></Collapse>
-<form onSubmit={handleSubmit}>
-  <Typography variant='h3'>Sign Up</Typography>
-  <TextField label="username" required margin='normal' fullWidth value={userName} onChange={(e) => setUserName()}/>
-  <TextField label="email" type='email' required margin='normal' fullWidth value={email} 
-  onChange={(e) => setEmail(e.target.value)}/>
-  <TextField label="password" type='password' required margin='normal' fullWidth value={password} onChange={(e) => setPassword(e.target.value)}/>
-  <Button type="submit" fullWidth variant='contained' size='large' sx={{color: 'white', mt:2,  bgcolor: '#60bf70'}}>Sign Up</Button>
-  <Typography className='text_login_login' mt={2}>Already have and account? <Link style={{textDecoration: 'none'}} to="/login">Please Login</Link></Typography>
-</form>
-</Box> */
-}
