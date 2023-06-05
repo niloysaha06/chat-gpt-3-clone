@@ -1,0 +1,14 @@
+.text_link{
+    color: #60bf70;
+    padding: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.text_link:hover{
+   color: black;
+}
+
+.text_login_login{
+    text-align: center;
+}
