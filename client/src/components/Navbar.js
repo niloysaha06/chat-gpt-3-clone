@@ -1,13 +1,26 @@
 import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../common/styles.css";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const loggedIn = JSON.parse(localStorage.getItem("authToken"));
 
-  const handleLogout = () => {};
+  //handle logout
+  const handleLogout = async () => {
+    try {
+      await axios.post("/api/v1/auth/logout");
+      localStorage.removeItem("authToken");
+      toast.success("User Logout Successfully");
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Box
       width={"100%"}
