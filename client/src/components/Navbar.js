@@ -32,9 +32,19 @@ const Navbar = () => {
         AI GPT3 Clone
       </Typography>
       {loggedIn ? (
-        <NavLink className="text_link" to="/login" onClick={handleLogout} p={1}>
-          Logout
-        </NavLink>
+        <>
+          <NavLink className="text_link" to="/" p={1}>
+            Home
+          </NavLink>
+          <NavLink
+            className="text_link"
+            to="/login"
+            onClick={handleLogout}
+            p={1}
+          >
+            Logout
+          </NavLink>
+        </>
       ) : (
         <>
           <NavLink className="text_link" to="/register" p={1}>

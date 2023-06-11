@@ -10,7 +10,7 @@ const errorHandle = (err, req, res, next) => {
     error = new errorResponse(message, 404);
   }
   //duplicate key error
-  if ((err.code = 11000)) {
+  if (err.code === 11000) {
     const message = "Duplicate field value enterd";
     error = new errorResponse(message, 400);
   }
