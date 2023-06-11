@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Summary from "./pages/Summary";
 import Paragraph from "./pages/Paragraph";
 import ChatBot from "./pages/ChatBot";
+import JsConverter from "./pages/JsConverter";
 
 function App() {
   const theme = useMemo(() => createTheme(themeSettings(), []));
@@ -29,6 +30,7 @@ function App() {
           <Route path="/summary" element={<Summary />} />
           <Route path="/paragraph" element={<Paragraph />} />
           <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/js-converter" element={<JsConverter />} />
         </Routes>
       </ThemeProvider>
     </>
